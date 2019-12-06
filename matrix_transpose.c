@@ -6,21 +6,23 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:33:31 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 16:33:44 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:20:48 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-void	matrix_transpose(t_matrix *mat, t_matrix *out)
+t_matrix	matrix_transpose(t_matrix *mat)
 {
-	out->m[0][1] = mat->m[1][0];
-	out->m[0][2] = mat->m[2][0];
-	;
-	out->m[1][0] = mat->m[0][1];
-	out->m[1][1] = mat->m[1][1];
-	out->m[1][2] = mat->m[2][1];
-	;
-	out->m[2][0] = mat->m[0][2];
-	out->m[2][1] = mat->m[1][2];
+	return ((t_matrix){
+		mat->m[0][0],
+		mat->m[1][0],
+		mat->m[2][0],
+		mat->m[0][1],
+		mat->m[1][1],
+		mat->m[2][1],
+		mat->m[0][2],
+		mat->m[1][2],
+		mat->m[2][2]
+	});
 }

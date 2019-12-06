@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:17:53 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:21:01 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void			vector_matrix(t_xyz vector, t_matrix *out);
 void			axang_matrix(t_xyzw r, t_matrix *out);
 
 t_matrix		matrix_multiply(t_matrix a, t_matrix b);
-void			matrix_transpose(t_matrix *mat, t_matrix *out);
+t_matrix		matrix_transpose(t_matrix *mat);
 void			vector_rotate(t_xyz p, t_matrix mat, t_xyz *out);
 
 t_xyz			vector_cross(t_xyz a, t_xyz b);
