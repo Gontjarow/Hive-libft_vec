@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_rotation.c                                  :+:      :+:    :+:   */
+/*   axang_matrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 19:41:11 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 16:33:23 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 16:47:46 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Tested with arbitrary axes and positive/negative degrees.
 */
 
-void	matrix_rotation(t_xyzw r, t_matrix *out)
+void	axang_matrix(t_xyzw r, t_matrix *out)
 {
 	t_xyz	v;
 	double	d;
