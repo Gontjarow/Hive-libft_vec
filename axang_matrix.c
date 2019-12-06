@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 19:41:11 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 16:47:46 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:37:31 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,28 @@
 ** Tested with arbitrary axes and positive/negative degrees.
 */
 
-void	axang_matrix(t_xyzw r, t_matrix *out)
+t_matrix	axang_matrix(t_xyzw r)
 {
-	t_xyz	v;
-	double	d;
+	t_xyz		v;
+	double		d;
+	t_matrix	mat;
 
+	mat = matrix_identity();
 	v = (t_xyz){r.x * r.x, r.y * r.y, r.z * r.z};
 	d = r.x * r.x + r.y * r.y + r.z * r.z;
 	r.w *= DEG_TO_RAD;
-	out->m[0][0] = (v.x + (v.y + v.z) * cos(r.w)) / d;
-	out->m[0][1] = (r.x * r.y * (1 - cos(r.w)) - r.z * sqrt(d) * sin(r.w)) / d;
-	out->m[0][2] = (r.x * r.z * (1 - cos(r.w)) + r.y * sqrt(d) * sin(r.w)) / d;
-	out->m[0][3] = 0;
+	mat.m[0][0] = (v.x + (v.y + v.z) * cos(r.w)) / d;
+	mat.m[0][1] = (r.x * r.y * (1 - cos(r.w)) - r.z * sqrt(d) * sin(r.w)) / d;
+	mat.m[0][2] = (r.x * r.z * (1 - cos(r.w)) + r.y * sqrt(d) * sin(r.w)) / d;
 	;
-	out->m[1][0] = (r.x * r.y * (1 - cos(r.w)) + r.z * sqrt(d) * sin(r.w)) / d;
-	out->m[1][1] = (v.y + (v.x + v.z) * cos(r.w)) / d;
-	out->m[1][2] = (r.y * r.z * (1 - cos(r.w)) - r.x * sqrt(d) * sin(r.w)) / d;
-	out->m[1][3] = 0;
+	mat.m[1][0] = (r.x * r.y * (1 - cos(r.w)) + r.z * sqrt(d) * sin(r.w)) / d;
+	mat.m[1][1] = (v.y + (v.x + v.z) * cos(r.w)) / d;
+	mat.m[1][2] = (r.y * r.z * (1 - cos(r.w)) - r.x * sqrt(d) * sin(r.w)) / d;
 	;
-	out->m[2][0] = (r.x * r.z * (1 - cos(r.w)) - r.y * sqrt(d) * sin(r.w)) / d;
-	out->m[2][1] = (r.y * r.z * (1 - cos(r.w)) + r.x * sqrt(d) * sin(r.w)) / d;
-	out->m[2][2] = (v.z + (v.x + v.y) * cos(r.w)) / d;
-	out->m[2][3] = 0;
+	mat.m[2][0] = (r.x * r.z * (1 - cos(r.w)) - r.y * sqrt(d) * sin(r.w)) / d;
+	mat.m[2][1] = (r.y * r.z * (1 - cos(r.w)) + r.x * sqrt(d) * sin(r.w)) / d;
+	mat.m[2][2] = (v.z + (v.x + v.y) * cos(r.w)) / d;
 	;
-	out->m[3][0] = 0;
-	out->m[3][1] = 0;
-	out->m[3][2] = 0;
-	out->m[3][3] = 1;
+	mat.m[3][3] = 1;
+	return (mat);
 }

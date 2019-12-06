@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:33:53 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 16:39:35 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:24:43 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,25 @@
 ** Returns +/-PI radians for x/z and +/-PI_BY_TWO radians for y
 */
 
-void	matrix_vector(t_matrix mat, t_xyz *out)
+t_xyz	matrix_vector(t_matrix mat)
 {
-	out->y = -asin(mat.m[2][0]);
+	t_xyz euler;
+
+	euler.y = -asin(mat.m[2][0]);
 	if (mat.m[2][0] == 1)
 	{
-		out->z = 0;
-		out->x = atan2(-mat.m[0][1], -mat.m[0][2]);
+		euler.z = 0;
+		euler.x = atan2(-mat.m[0][1], -mat.m[0][2]);
 	}
 	else if (mat.m[2][0] == -1)
 	{
-		out->z = 0;
-		out->x = atan2(mat.m[0][1], mat.m[0][2]);
+		euler.z = 0;
+		euler.x = atan2(mat.m[0][1], mat.m[0][2]);
 	}
 	else
 	{
-		out->z = atan2(mat.m[1][0], mat.m[0][0]);
-		out->x = atan2(mat.m[2][1], mat.m[2][2]);
+		euler.z = atan2(mat.m[1][0], mat.m[0][0]);
+		euler.x = atan2(mat.m[2][1], mat.m[2][2]);
 	}
+	return (euler);
 }

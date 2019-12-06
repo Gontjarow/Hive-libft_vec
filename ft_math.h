@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:21:01 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:38:44 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ typedef struct	s_xyzw
 
 t_matrix		matrix_identity(void);
 
-void			matrix_vector(t_matrix mat, t_xyz *out);
-void			vector_matrix(t_xyz vector, t_matrix *out);
-void			axang_matrix(t_xyzw r, t_matrix *out);
+t_xyz			matrix_vector(t_matrix mat);
+t_matrix		vector_matrix(t_xyz vector);
+t_matrix		axang_matrix(t_xyzw r);
 
 t_matrix		matrix_multiply(t_matrix a, t_matrix b);
 t_matrix		matrix_transpose(t_matrix *mat);
-void			vector_rotate(t_xyz p, t_matrix mat, t_xyz *out);
+t_xyz			vector_rotate(t_xyz p, t_matrix mat);
 
 t_xyz			vector_cross(t_xyz a, t_xyz b);
 double			vector_dot(t_xyz a, t_xyz b);
