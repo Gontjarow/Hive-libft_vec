@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:08:57 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:13:40 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct	s_xyzw
 	double w;
 }				t_xyzw;
 
-void			matrix_identity(t_matrix *mat);
+t_matrix		matrix_identity(void);
 
 void			matrix_vector(t_matrix mat, t_xyz *out);
 void			vector_matrix(t_xyz vector, t_matrix *out);
