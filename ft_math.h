@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 19:11:48 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 00:24:05 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ t_xyz			vector3(double x, double y, double z);
 t_xyzw			vector4(double x, double y, double z, double w);
 t_matrix		matrix_identity(void);
 t_matrix		matrix_translation(double x, double y, double z);
-t_matrix		matrix_rotation(double x, double y, double z, double w);
 
 /*
 ** Conversion functions
 */
 
-t_xyz			matrix_vector(t_matrix mat);
-t_matrix		vector_matrix(t_xyz vector);
+t_xyz			mtov(t_matrix mat);
+t_matrix		vtom(t_xyz vector);
+t_matrix		atom(t_xyzw r);
 
 /*
 ** Operations

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_vector.c                                    :+:      :+:    :+:   */
+/*   mtov.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:33:53 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:24:43 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 23:59:38 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** Returns +/-PI radians for x/z and +/-PI_BY_TWO radians for y
 */
 
-t_xyz	matrix_vector(t_matrix mat)
+t_xyz	mtov(t_matrix mat)
 {
 	t_xyz euler;
 
