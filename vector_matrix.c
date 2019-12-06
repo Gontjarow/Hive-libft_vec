@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vector_matrix.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/06 16:34:26 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/06 16:36:50 by ngontjar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_math.h"
 
-/* Convert vector into rotation matrix. */
-/* Vector should contain radians. */
+/*
+** Euler-angles (vector) to matrix rotation.
+** Angles must be radians.
+*/
 
-void vector_matrix(t_xyz vector, t_matrix *out)
+void	vector_matrix(t_xyz vector, t_matrix *out)
 {
 	t_xy u;
 	t_xy v;

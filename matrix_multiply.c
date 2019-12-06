@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrix_multiply.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/06 16:30:03 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/06 16:30:54 by ngontjar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_math.h"
 
-void matrix_multiply(t_matrix a, t_matrix b, t_matrix *out)
+void	matrix_multiply(t_matrix a, t_matrix b, t_matrix *out)
 {
 	out->m[0][0] =
 		a.m[0][0] * b.m[0][0] + a.m[0][1] * b.m[1][0] + a.m[0][2] * b.m[2][0];
