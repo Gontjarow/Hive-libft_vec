@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:38:44 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/06 19:11:48 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,35 @@ typedef struct	s_xyzw
 	double w;
 }				t_xyzw;
 
+/*
+** Constructors?
+*/
+
+t_xy			vector2(double x, double y);
+t_xyz			vector3(double x, double y, double z);
+t_xyzw			vector4(double x, double y, double z, double w);
 t_matrix		matrix_identity(void);
+t_matrix		matrix_translation(double x, double y, double z);
+t_matrix		matrix_rotation(double x, double y, double z, double w);
+
+/*
+** Conversion functions
+*/
 
 t_xyz			matrix_vector(t_matrix mat);
 t_matrix		vector_matrix(t_xyz vector);
-t_matrix		axang_matrix(t_xyzw r);
+
+/*
+** Operations
+*/
 
 t_matrix		matrix_multiply(t_matrix a, t_matrix b);
 t_matrix		matrix_transpose(t_matrix *mat);
 t_xyz			vector_rotate(t_xyz p, t_matrix mat);
+
+/*
+** Other calculations {todo: categorize these}
+*/
 
 t_xyz			vector_cross(t_xyz a, t_xyz b);
 double			vector_dot(t_xyz a, t_xyz b);
