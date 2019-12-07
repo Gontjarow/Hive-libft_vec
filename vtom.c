@@ -6,18 +6,18 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:34:26 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 23:48:45 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 03:12:44 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
 /*
-** Euler-angles (vector) to matrix rotation.
+** Euler-angles to matrix rotation.
 ** Angles must be radians.
 */
 
-t_matrix	vtom(t_xyz vector)
+t_matrix	vtom(t_xyz euler)
 {
 	t_xy		u;
 	t_xy		v;
@@ -26,9 +26,9 @@ t_matrix	vtom(t_xyz vector)
 	t_matrix	matrix;
 
 	matrix = matrix_identity();
-	u = (t_xy){sin(vector.x), cos(vector.x)};
-	v = (t_xy){sin(vector.y), cos(vector.y)};
-	w = (t_xy){sin(vector.z), cos(vector.z)};
+	u = (t_xy){sin(euler.x), cos(euler.x)};
+	v = (t_xy){sin(euler.y), cos(euler.y)};
+	w = (t_xy){sin(euler.z), cos(euler.z)};
 	p = (t_xy){(u.x * v.x), (u.y * v.x)};
 	;
 	matrix.m[0][0] = (v.y * w.y);

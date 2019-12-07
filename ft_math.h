@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 00:24:05 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 03:13:36 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,13 @@ t_matrix		matrix_translation(double x, double y, double z);
 */
 
 t_xyz			mtov(t_matrix mat);
-t_matrix		vtom(t_xyz vector);
+
+t_matrix		vtom(t_xyz euler);
+t_xyzw			vtoq(t_xyz euler);
+
+t_xyz			qtov(t_xyzw q);
+t_matrix		qtom(t_xyzw q);
+
 t_matrix		atom(t_xyzw r);
 
 /*
