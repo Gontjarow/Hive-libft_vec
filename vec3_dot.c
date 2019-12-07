@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector3.c                                          :+:      :+:    :+:   */
+/*   vec3_dot.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 18:57:13 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:58:36 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/02 14:03:29 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/07 03:21:29 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_xyz vector3(double x, double y, double z)
+double	vec3_dot(t_xyz a, t_xyz b)
 {
-	return ((t_xyz){x, y, z});
+	return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z));
 }

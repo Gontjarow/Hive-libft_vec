@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector2.c                                          :+:      :+:    :+:   */
+/*   vec3_mag.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 18:58:19 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:58:34 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/06 18:00:37 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/07 03:21:28 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_xy vector2(double x, double y)
+double	vec3_mag(t_xyz v)
 {
-	return ((t_xy){x, y});
+	return (sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z)));
 }

@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_cross.c                                     :+:      :+:    :+:   */
+/*   vec2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/02 14:12:18 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:00:24 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/06 18:58:19 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/07 03:21:32 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_xyz	vector_cross(t_xyz a, t_xyz b)
+t_xy vec2(double x, double y)
 {
-	return ((t_xyz){
-		(a.y * b.z) - (a.z * b.y),
-		(a.x * b.z) - (a.z * b.x),
-		(a.x * b.y) - (a.y * b.x)
-	});
+	return ((t_xy){x, y});
 }

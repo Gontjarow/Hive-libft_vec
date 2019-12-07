@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 03:13:36 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 03:23:37 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ typedef struct	s_xyzw
 ** Constructors?
 */
 
-t_xy			vector2(double x, double y);
-t_xyz			vector3(double x, double y, double z);
-t_xyzw			vector4(double x, double y, double z, double w);
+t_xy			vec2(double x, double y);
+t_xyz			vec3(double x, double y, double z);
+t_xyzw			vec4(double x, double y, double z, double w);
 t_matrix		matrix_identity(void);
 t_matrix		matrix_translation(double x, double y, double z);
 
@@ -82,14 +82,20 @@ t_matrix		atom(t_xyzw r);
 
 t_matrix		matrix_multiply(t_matrix a, t_matrix b);
 t_matrix		matrix_transpose(t_matrix *mat);
-t_xyz			vector_rotate(t_xyz p, t_matrix mat);
+t_xyz			vec3_rotate(t_xyz p, t_matrix mat);
 
 /*
 ** Other calculations {todo: categorize these}
 */
 
-t_xyz			vector_cross(t_xyz a, t_xyz b);
-double			vector_dot(t_xyz a, t_xyz b);
-double			vector_mag(t_xyz v);
+t_xyz			vec3_add(t_xyz a, t_xyz b);
+t_xyz			vec3_sub(t_xyz a, t_xyz b);
+t_xyz			vec3_mult(t_xyz v, double scalar);
+t_xyz			vec3_div(t_xyz v, double scalar);
+t_xyz			vec3_norm(t_xyz v);
+t_xyz			vec3_cross(t_xyz a, t_xyz b);
+double			vec3_dot(t_xyz a, t_xyz b);
+double			vec3_mag(t_xyz v);
+double			vec3_dist(t_xyz a, t_xyz b);
 
 #endif
