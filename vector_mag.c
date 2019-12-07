@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 18:00:37 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:07:53 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 02:01:58 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 double	vector_mag(t_xyz v)
 {
-	return (sqrt(pow(v.x, 2) + pow(v.y, 2) + pow(v.z, 2)));
+	return (sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z)));
 }
