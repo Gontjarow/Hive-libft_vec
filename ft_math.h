@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 20:57:29 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 23:19:59 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@
 
 # define SQRT2 (1.41421356237309504880168872420969807)
 # define SIN45_DEG (0.70710678118654752440084436210484903)
+
+# define ZERO_ROTATION (t_xyzw){0,0,0,1}
+# define ZERO_VECTOR3 (t_xyz){0,0,0}
+# define ZERO_VECTOR2 (t_xyz){0,0}
 
 typedef struct	s_matrix
 {
@@ -54,6 +58,7 @@ typedef struct	s_xyzw
 
 /*
 ** Constructors?
+** Maybe some of these should be #defines instead.
 */
 
 t_xy			vec2(double x, double y);
