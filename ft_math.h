@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 23:19:59 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/08 01:13:27 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ typedef struct	s_xyzw
 ** Maybe some of these should be #defines instead.
 */
 
-t_xy			vec2(double x, double y);
-t_xyz			vec3(double x, double y, double z);
-t_xyzw			vec4(double x, double y, double z, double w);
+# define VEC2(a,b) (t_xy){a,b}
+# define VEC3(a,b,c) (t_xyz){a,b,c}
+# define VEC4(a,b,c,d) (t_xyz){a,b,c,d}
 t_matrix		matrix_identity(void);
 t_matrix		matrix_translation(double x, double y, double z);
 
