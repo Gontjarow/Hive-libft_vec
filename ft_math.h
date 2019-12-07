@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 03:23:37 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/07 03:29:59 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ t_xyz			vec3_cross(t_xyz a, t_xyz b);
 double			vec3_dot(t_xyz a, t_xyz b);
 double			vec3_mag(t_xyz v);
 double			vec3_dist(t_xyz a, t_xyz b);
+t_xyzw			quat_norm(t_xyzw q);
 
 #endif
