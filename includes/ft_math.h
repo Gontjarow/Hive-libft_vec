@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/08 01:13:27 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/08 01:21:19 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct	s_xyzw
 
 # define VEC2(a,b) (t_xy){a,b}
 # define VEC3(a,b,c) (t_xyz){a,b,c}
-# define VEC4(a,b,c,d) (t_xyz){a,b,c,d}
+# define VEC4(a,b,c,d) (t_xyzw){a,b,c,d}
 t_matrix		matrix_identity(void);
 t_matrix		matrix_translation(double x, double y, double z);
 
@@ -103,5 +103,6 @@ double			vec3_dot(t_xyz a, t_xyz b);
 double			vec3_mag(t_xyz v);
 double			vec3_dist(t_xyz a, t_xyz b);
 t_xyzw			quat_norm(t_xyzw q);
+t_xyzw			vec4_between(t_xyz a, t_xyz b);
 
 #endif

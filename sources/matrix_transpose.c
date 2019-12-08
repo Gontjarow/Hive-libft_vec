@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_scale.c                                     :+:      :+:    :+:   */
+/*   matrix_transpose.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 18:50:39 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 18:53:48 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/06 16:33:31 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/08 03:24:32 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_matrix	matrix_scale(double x, double y, double z)
+t_matrix	matrix_transpose(t_matrix *mat)
 {
-	t_matrix matrix;
-
-	matrix = matrix_identity();
-	matrix.m[0][0] = x;
-	matrix.m[1][1] = y;
-	matrix.m[2][2] = z;
+	return ((t_matrix){.m = {
+		{mat->m[0][0], mat->m[1][0], mat->m[2][0], mat->m[3][0]},
+		{mat->m[0][1], mat->m[1][1], mat->m[2][1], mat->m[3][1]},
+		{mat->m[0][2], mat->m[1][2], mat->m[2][2], mat->m[3][2]},
+		{mat->m[0][3], mat->m[1][3], mat->m[2][3], mat->m[3][3]}
+	}});
 }
