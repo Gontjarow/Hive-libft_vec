@@ -10,10 +10,10 @@ This library should also be independent of any other libraries besides math.h fo
 All of the code in this repo must respect the 42 school's official coding style (The Norm / La Norme).
 Including but not limited to:
 ### Functions
-  - Functions must contain 25 lines or less. (This rule applies to practically all scopes.)
-  - Functions must not have more than 4 parameters.
-  - Functions must not have more than 5 local variables.
-  - Variables cannot be initialized during declaration. This includes arrays.
+  - Functions must contain 25 lines or less. (Doesn't apply to enums/structs)
+  - Functions must not have more than 4 parameters. (Bypassable with arrays/structs)
+  - Functions must not have more than 5 local variables. (Bypassable with arrays/structs)
+  - Variables cannot be initialized during declaration. This includes arrays/structs.
   - Function names, local variables, and struct members must be respectively aligned within scope.
 ### Misc
   - Do-While and For-loops are forbidden. Use While.
