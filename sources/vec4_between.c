@@ -6,11 +6,17 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 20:10:29 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/08 01:22:26 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/08 17:51:07 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
+
+/*
+** Calculates the shortest rotation between two vectors.
+** If the vectors are anti-parallel, the rotation is kept
+** on the XY-plane. Rotations are -PI to +PI around each axis.
+*/
 
 t_xyzw	vec4_between(t_xyz a, t_xyz b)
 {

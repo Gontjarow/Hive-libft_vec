@@ -35,12 +35,12 @@ INC = -I $(INCDIR) -lm
 MSG = \033[0;91m
 END = \033[0m
 
-.PHONY all, clean, fclean, re, test, file
+.PHONY: all, clean, fclean, re, test, file
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar -rc $(NAME)
+	@ar rcs $(NAME) $(OBJ)
 	@echo "$(MSG)Compiled library!$(END)"
 
 $(OBJ): $(SRCDIR)%.o : $(SRCDIR)%.c
@@ -59,6 +59,6 @@ re: fclean all
 test:
 	@rm -f a.out
 	@echo "$(MSG)Compiling test...$(END)"
-	gcc $(file) -l vector-math $(INC) -L .
+	gcc $(file) -l vector-math -L . $(INC)
 	@echo "$(MSG)Running...$(END)"
 	./a.out
