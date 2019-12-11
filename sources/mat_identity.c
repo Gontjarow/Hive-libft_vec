@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_multiply.c                                  :+:      :+:    :+:   */
+/*   matrix_identity.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 16:30:03 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/08 03:05:46 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/11 20:19:02 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_matrix	matrix_multiply(t_matrix a, t_matrix b)
+t_matrix	mat_identity(void)
 {
-	t_matrix	matrix;
-	int			y;
-	int			x;
-	int			i;
-
-	y = 0;
-	while (y < 4)
-	{
-		x = 0;
-		while (x < 4)
-		{
-			matrix.m[y][x] = 0;
-			i = 0;
-			while (i < 4)
-			{
-				matrix.m[y][x] += (a.m[y][i] * b.m[i][x]);
-				++i;
-			}
-			++x;
-		}
-		++y;
-	}
-	return (matrix);
+	return ((t_matrix){
+		.m[0][0] = 1, .m[0][1] = 0, .m[0][2] = 0, .m[0][3] = 0,
+		.m[1][0] = 0, .m[1][1] = 1, .m[1][2] = 0, .m[1][3] = 0,
+		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = 1, .m[2][3] = 0,
+		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = 0, .m[3][3] = 1
+	});
 }

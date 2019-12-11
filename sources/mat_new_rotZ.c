@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_transpose.c                                 :+:      :+:    :+:   */
+/*   mat_new_rotZ.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 16:33:31 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/08 03:24:32 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/11 20:41:44 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_matrix	matrix_transpose(t_matrix *mat)
+t_matrix	mat_new_rotX(float radians)
 {
-	return ((t_matrix){.m = {
-		{mat->m[0][0], mat->m[1][0], mat->m[2][0], mat->m[3][0]},
-		{mat->m[0][1], mat->m[1][1], mat->m[2][1], mat->m[3][1]},
-		{mat->m[0][2], mat->m[1][2], mat->m[2][2], mat->m[3][2]},
-		{mat->m[0][3], mat->m[1][3], mat->m[2][3], mat->m[3][3]}
-	}});
+	double c;
+	double s;
+
+	c = cos(radians);
+	s = sin(radians);
+	return ((t_matrix){
+		.m[0][0] = c, .m[0][1] = s, .m[0][2] = 0, .m[0][3] = 0,
+		.m[1][0] = -s, .m[1][1] = c, .m[1][2] = 0, .m[1][3] = 0,
+		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = 1, .m[2][3] = 0,
+		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = 0, .m[3][3] = 1
+	});
 }

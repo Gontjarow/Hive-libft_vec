@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_translation.c                               :+:      :+:    :+:   */
+/*   mat_new_translation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 19:04:45 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/06 19:07:32 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/11 20:20:16 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_matrix	matrix_translation(double x, double y, double z)
+t_matrix	mat_new_translation(double x, double y, double z)
 {
-	t_matrix matrix;
-
-	matrix = matrix_identity();
-	matrix.m[3][0] = x;
-	matrix.m[3][1] = y;
-	matrix.m[3][2] = z;
-	return (matrix);
+	return ((t_matrix){
+		.m[0][0] = 1, .m[0][1] = 0, .m[0][2] = 0, .m[0][3] = 0,
+		.m[1][0] = 0, .m[1][1] = 1, .m[1][2] = 0, .m[1][3] = 0,
+		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = 1, .m[2][3] = 0,
+		.m[3][0] = x, .m[3][1] = y, .m[3][2] = z, .m[3][3] = 1
+	});
 }
