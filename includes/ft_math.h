@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/08 17:51:04 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/12 15:59:17 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,35 +63,43 @@ typedef struct	s_xyzw
 # define VEC2(a,b) (t_xy){a,b}
 # define VEC3(a,b,c) (t_xyz){a,b,c}
 # define VEC4(a,b,c,d) (t_xyzw){a,b,c,d}
-t_matrix		matrix_identity(void);
-t_matrix		matrix_translation(double x, double y, double z);
+t_matrix		mat_identity(void);
+t_matrix		mat_new_axang(t_xyz ax, double ang);
+t_matrix		mat_new_rotX(float radians);
+t_matrix		mat_new_rotX(float radians);
+t_matrix		mat_new_rotX(float radians);
+t_matrix		mat_new_scale(double x, double y, double z);
+t_matrix		mat_new_scale_center(double x, double y, double z, t_xyz p);
+t_matrix		mat_new_translation(double x, double y, double z);
+t_matrix		mat_persp_fov(double ar, double nZ, double fZ, double vfov);
+t_matrix		mat_persp_ortho(double w, double h, double nZ, double fZ);
+t_matrix		mat_persp_wh(double w, double h, double nZ, double fZ);
 
 /*
 ** Conversion functions
 */
 
 t_xyz			mtov(t_matrix mat);
-
 t_matrix		vtom(t_xyz euler);
 t_xyzw			vtoq(t_xyz euler);
-
 t_xyz			qtov(t_xyzw q);
 t_matrix		qtom(t_xyzw q);
-
 t_matrix		atom(t_xyzw r);
 
 /*
 ** Operations
 */
 
-t_matrix		matrix_multiply(t_matrix a, t_matrix b);
-t_matrix		matrix_transpose(t_matrix *mat);
+t_matrix		mat_multiply(t_matrix a, t_matrix b);
+t_matrix		mat_transpose(t_matrix *mat);
+t_matrix		mat_transform(t_matrix M, t_xyzw q);
 t_xyz			vec3_rotate(t_xyz p, t_matrix mat);
 
 /*
 ** Other calculations {todo: categorize these}
 */
 
+t_xy			vec2_add(t_xy a, t_xy b);
 t_xyz			vec3_add(t_xyz a, t_xyz b);
 t_xyz			vec3_sub(t_xyz a, t_xyz b);
 t_xyz			vec3_mult(t_xyz v, double scalar);

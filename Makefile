@@ -1,14 +1,24 @@
 SOURCES = \
 	atom.c \
-	matrix_identity.c \
-	matrix_multiply.c \
-	matrix_scale.c \
-	matrix_translation.c \
-	matrix_transpose.c \
+	mat_identity.c \
+	mat_multiply.c \
+	mat_new_axang.c \
+	mat_new_rotX.c \
+	mat_new_rotY.c \
+	mat_new_rotZ.c \
+	mat_new_scale_center.c \
+	mat_new_scale.c \
+	mat_new_translation.c \
+	mat_persp_fov.c \
+	mat_persp_ortho.c \
+	mat_persp_wh.c \
+	mat_transpose.c \
+	mat_transform.c \
 	mtov.c \
 	qtom.c \
 	qtov.c \
 	quat_norm.c \
+	vec2_add.c \
 	vec3_add.c \
 	vec3_cross.c \
 	vec3_dist.c \

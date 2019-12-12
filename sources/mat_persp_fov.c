@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/11 21:29:58 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/12 16:08:02 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_matrix	mat_persp_fov(double ar, double nearZ, double farZ, double vfov)
 	double clip;
 
 	if (nearZ <= 0 || farZ <= 0 || nearZ >= farZ || (vfov <= 0 || vfov >= PI))
-		return (matrix_identity());
+		return (mat_identity());
 	y = 1 / tan(vfov * 0.5);
 	x = y / ar;
 	clip = farZ / (nearZ - farZ);

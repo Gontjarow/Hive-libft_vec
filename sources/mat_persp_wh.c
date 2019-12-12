@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/11 21:38:56 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/12 16:07:58 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_matrix	mat_persp_wh(double w, double h, double nearZ, double farZ)
 	double clip;
 
 	if (nearZ <= 0 || farZ <= 0 || nearZ >= farZ)
-		return (matrix_identity());
+		return (mat_identity());
 	near2 = nearZ * 2;
 	clip = farZ / (nearZ - farZ);
 	return ((t_matrix){

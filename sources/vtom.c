@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:34:26 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 03:12:44 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/12 16:08:00 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_matrix	vtom(t_xyz euler)
 	t_xy		p;
 	t_matrix	matrix;
 
-	matrix = matrix_identity();
+	matrix = mat_identity();
 	u = (t_xy){sin(euler.x), cos(euler.x)};
 	v = (t_xy){sin(euler.y), cos(euler.y)};
 	w = (t_xy){sin(euler.z), cos(euler.z)};

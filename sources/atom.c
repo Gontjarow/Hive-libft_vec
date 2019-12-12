@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   axang_matrix.c                                     :+:      :+:    :+:   */
+/*   atom.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 19:41:11 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 00:20:40 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/12 16:07:55 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_matrix		atom(t_xyzw r)
 	double		d;
 	t_matrix	mat;
 
-	mat = matrix_identity();
+	mat = mat_identity();
 	v = (t_xyz){r.x * r.x, r.y * r.y, r.z * r.z};
 	d = r.x * r.x + r.y * r.y + r.z * r.z;
 	r.w *= DEG_TO_RAD;
