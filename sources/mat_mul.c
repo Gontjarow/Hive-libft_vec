@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec3_mult.c                                        :+:      :+:    :+:   */
+/*   mat_mul.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 01:48:33 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 03:21:27 by ngontjar         ###   ########.fr       */
+/*   Created: 2019/12/06 16:30:03 by ngontjar          #+#    #+#             */
+/*   Updated: 2019/12/13 03:35:19 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_xyz	vec3_mult(t_xyz v, double scalar)
+t_matrix	mat_mul(t_matrix a, t_matrix b)
 {
-	return ((t_xyz){
-		v.x * scalar,
-		v.y * scalar,
-		v.z * scalar
-	});
+	t_matrix	matrix;
+	int			y;
+	int			x;
+	int			i;
+
+	y = 0;
+	while (y < 4)
+	{
+		x = 0;
+		while (x < 4)
+		{
+			matrix.m[y][x] = 0;
+			i = 0;
+			while (i < 4)
+			{
+				matrix.m[y][x] += (a.m[y][i] * b.m[i][x]);
+				++i;
+			}
+			++x;
+		}
+		++y;
+	}
+	return (matrix);
 }
