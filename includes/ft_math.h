@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 03:35:22 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/13 19:08:59 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,18 @@ typedef struct	s_xyzw
 # define VEC2(a,b) (t_xy){a,b}
 # define VEC3(a,b,c) (t_xyz){a,b,c}
 # define VEC4(a,b,c,d) (t_xyzw){a,b,c,d}
+
 t_matrix		mat_identity(void);
 t_matrix		mat_new_axang(t_xyz ax, double ang);
-t_matrix		mat_new_rotX(float radians);
-t_matrix		mat_new_rotX(float radians);
-t_matrix		mat_new_rotX(float radians);
+t_matrix		mat_new_rotx(float radians);
+t_matrix		mat_new_roty(float radians);
+t_matrix		mat_new_rotz(float radians);
 t_matrix		mat_new_scale(double x, double y, double z);
 t_matrix		mat_new_scale_center(double x, double y, double z, t_xyz p);
 t_matrix		mat_new_translation(double x, double y, double z);
-t_matrix		mat_persp_fov(double ar, double nZ, double fZ, double vfov);
-t_matrix		mat_persp_ortho(double w, double h, double nZ, double fZ);
-t_matrix		mat_persp_wh(double w, double h, double nZ, double fZ);
+t_matrix		mat_persp_fov(double ar, double nz, double fz, double vfov);
+t_matrix		mat_persp_ortho(double w, double h, double nz, double fz);
+t_matrix		mat_persp_wh(double w, double h, double nz, double fz);
 
 /*
 ** Conversion functions
@@ -92,7 +93,7 @@ t_matrix		atom(t_xyzw r);
 
 t_matrix		mat_mul(t_matrix a, t_matrix b);
 t_matrix		mat_transpose(t_matrix *mat);
-t_matrix		mat_transform(t_matrix M, t_xyzw q);
+t_matrix		mat_transform(t_matrix m, t_xyzw q);
 t_xyz			vec3_mulmat(t_xyz p, t_matrix mat);
 
 /*

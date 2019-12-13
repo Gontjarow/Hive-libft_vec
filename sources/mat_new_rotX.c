@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mat_new_rotX.c                                     :+:      :+:    :+:   */
+/*   mat_new_rotx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/11 20:39:29 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/13 19:05:17 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_matrix	mat_new_rotX(float radians)
+t_matrix	mat_new_rotx(float radians)
 {
 	double c;
 	double s;

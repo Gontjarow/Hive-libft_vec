@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 02:22:43 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 02:52:36 by ngontjar         ###   ########.fr       */
+/*   Updated: 2019/12/13 19:12:23 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 
 t_xyz	qtov(t_xyzw q)
 {
-	t_xyzw norm;
-	double unit;
-	double test;
-	t_xy c;
+	t_xyzw	norm;
+	double	unit;
+	double	test;
+	t_xy	c;
 
 	norm = (t_xyzw){(q.x * q.x), (q.y * q.y), (q.z * q.z), (q.w * q.w)};
 	unit = norm.x + norm.y + norm.z + norm.w;
