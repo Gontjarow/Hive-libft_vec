@@ -3,9 +3,9 @@ SOURCES = \
 	mat_identity.c \
 	mat_mul.c \
 	mat_new_axang.c \
-	mat_new_rotX.c \
-	mat_new_rotY.c \
-	mat_new_rotZ.c \
+	mat_new_rotx.c \
+	mat_new_roty.c \
+	mat_new_rotz.c \
 	mat_new_scale_center.c \
 	mat_new_scale.c \
 	mat_new_translation.c \
