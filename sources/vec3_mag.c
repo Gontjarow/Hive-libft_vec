@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_mag.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 18:00:37 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 03:21:28 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/10 02:10:56 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
+
+/*
+** Magnitude, or length
+*/
 
 double	vec3_mag(t_xyz v)
 {

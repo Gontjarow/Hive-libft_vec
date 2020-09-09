@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_sub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 01:59:28 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 03:21:25 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/10 02:11:33 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
+
+/*
+** A - B
+*/
 
 t_xyz	vec3_sub(t_xyz a, t_xyz b)
 {
