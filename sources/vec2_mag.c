@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_add.c                                         :+:      :+:    :+:   */
+/*   vec2_mag.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 01:59:30 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/09 20:49:58 by ngontjar         ###   ########.fr       */
+/*   Created: 2020/09/09 20:39:55 by ngontjar          #+#    #+#             */
+/*   Updated: 2020/09/09 21:18:20 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "../includes/ft_math.h"
 
 /*
-** A + B
+** Magnitude, or length
 */
 
-t_xy	vec2_add(t_xy a, t_xy b)
+double	vec2_mag(t_xy v)
 {
-	return ((t_xy){
-		a.x + b.x,
-		a.y + b.y,
-	});
+	return (sqrt((v.x * v.x) + (v.y * v.y)));
 }

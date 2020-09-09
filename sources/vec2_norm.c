@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_add.c                                         :+:      :+:    :+:   */
+/*   vec2_norm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 01:59:30 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/09 20:49:58 by ngontjar         ###   ########.fr       */
+/*   Created: 2020/09/09 20:40:42 by ngontjar          #+#    #+#             */
+/*   Updated: 2020/09/09 21:19:00 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "../includes/ft_math.h"
 
 /*
-** A + B
+** Normalize, or "change magnitude to 1.0 and maintain direction."
 */
 
-t_xy	vec2_add(t_xy a, t_xy b)
+t_xy	vec2_norm(t_xy v)
 {
+	double mag;
+
+	mag = sqrt((v.x * v.x) + (v.y * v.y));
 	return ((t_xy){
-		a.x + b.x,
-		a.y + b.y,
+		v.x / mag,
+		v.y / mag
 	});
 }

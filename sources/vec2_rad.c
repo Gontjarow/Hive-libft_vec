@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_add.c                                         :+:      :+:    :+:   */
+/*   vec2_rad.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 01:59:30 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/09 20:49:58 by ngontjar         ###   ########.fr       */
+/*   Created: 2020/09/09 20:42:17 by ngontjar          #+#    #+#             */
+/*   Updated: 2020/09/09 21:19:32 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "../includes/ft_math.h"
 
 /*
-** A + B
+** Vector2 to Radians
 */
 
-t_xy	vec2_add(t_xy a, t_xy b)
+double	vec2_rad(t_xy v)
 {
-	return ((t_xy){
-		a.x + b.x,
-		a.y + b.y,
-	});
+	return (atan2(v.y, v.x));
 }

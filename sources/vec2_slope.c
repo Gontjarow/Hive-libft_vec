@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_add.c                                         :+:      :+:    :+:   */
+/*   vec2_slope.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 01:59:30 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/09 20:49:58 by ngontjar         ###   ########.fr       */
+/*   Created: 2020/09/09 19:31:38 by ngontjar          #+#    #+#             */
+/*   Updated: 2020/09/09 20:53:01 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "../includes/ft_math.h"
 
 /*
-** A + B
+** rise / run
+** To use a single vector: vec2_slope(VEC2(0,0), v);
 */
 
-t_xy	vec2_add(t_xy a, t_xy b)
+double	vec2_slope(t_xy p_a, t_xy p_b)
 {
-	return ((t_xy){
-		a.x + b.x,
-		a.y + b.y,
-	});
+	return ((p_a.y - p_b.y) / (p_a.x - p_b.x));
 }
