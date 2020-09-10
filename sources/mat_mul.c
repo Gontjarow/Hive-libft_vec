@@ -3,20 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   mat_mul.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:30:03 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 03:35:19 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 02:44:50 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
+/*
+** https://www.mathsisfun.com/algebra/matrix-multiplying.html
+** *
+** (x,y) are for the current cell in the resulting matrix.
+** The cell is initialized to 0.
+** Cell = A(row) · B(col)
+*/
+
 t_matrix	mat_mul(t_matrix a, t_matrix b)
 {
 	t_matrix	matrix;
-	int			y;
 	int			x;
+	int			y;
 	int			i;
 
 	y = 0;
