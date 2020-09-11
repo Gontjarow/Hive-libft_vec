@@ -2,7 +2,7 @@
 A small library that implements useful 2D and 3D math functions, primarily dealing with vectors and matrices.
 
 The primary goal for this library is to be as self-contained as possible and for all functions in this library is to avoid memory allocations as much as possible. Structs should be used liberally when passing/returning any kind of complex results. These structs should be simple and universal, so that as many functions as possible might make use of them without needing their own struct.
-- When the project started, this library had 4 structs, **xy**, **xyz**, **xyzw** (containing only doubles, to be interchangeable with 64-bit ints), and **matrix** (containing only double[4][4]).
+- When the project started, this library had 4 structs, **xy**, **xyz**, **xyzw** (containing only doubles, to be interchangeable with 32-bit ints), and **matrix** (containing only double[4][4]).
 
 This library should also be independent of any other libraries besides math.h for basic math functions. This may change, but the amount of dependencies should be kept absolutely minimal, to keep the library as compatible with other 42 projects as possible. (No forbidden functions, which may change from project to project.)
 
