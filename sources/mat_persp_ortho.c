@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 04:54:53 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 08:02:37 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ t_matrix	mat_persp_ortho(double w, double h, double nz, double fz)
 	if (nz <= 0 || fz <= 0 || nz >= fz)
 		return (mat_identity());
 	clip = nz - fz;
-	return ((t_matrix){
+	return ((t_matrix){.m = {
 		{(2 / w),       0,           0, 0},
 		{0,       (2 / h),           0, 0},
 		{0,             0,  (1 / clip), 0},
 		{0,             0, (nz / clip), 1}
-	});
+	}});
 }
 
 /*
@@ -54,7 +54,7 @@ t_matrix mat_persp_ortho2(t_xy v, t_xy h, t_xy d)
 	height = h.y - h.x;
 	vertical = v.y - v.x;
 	depth = d.y - d.x;
-	return ((t_matrix){
+	return ((t_matrix){.m = {
 		{2 / height,            0,          0, 0},
 		{0,          2 / vertical,          0, 0},
 		{0,                     0, -2 / depth, 0},
@@ -64,5 +64,5 @@ t_matrix mat_persp_ortho2(t_xy v, t_xy h, t_xy d)
 			-(d.y + d.x) / depth,
 			1
 		}
-	});
+	}});
 }

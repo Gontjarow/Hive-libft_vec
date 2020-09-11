@@ -53,7 +53,7 @@ SRC = $(addprefix $(SRCDIR),$(SOURCES))
 OBJ = $(SRC:.c=.o)
 INC = -I $(INCDIR) -lm
 
-MSG = \033[0;91m
+MSG = \033[1;36m
 END = \033[0m
 
 .PHONY: all, clean, fclean, re, test, file
