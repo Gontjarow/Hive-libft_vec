@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 07:55:51 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 20:55:19 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,18 @@ typedef double	t_rad;
 
 t_matrix		mat_identity(void);
 t_matrix		mat_new_axang(t_xyz ax, double ang);
-t_matrix		mat_new_rotx(float radians);
-t_matrix		mat_new_roty(float radians);
-t_matrix		mat_new_rotz(float radians);
-t_matrix		mat_new_rot2d(float radians);
+t_matrix		mat_new_rotx(t_rad angle);
+t_matrix		mat_new_roty(t_rad angle);
+t_matrix		mat_new_rotz(t_rad angle);
+t_matrix		mat_new_rot2d(t_rad angle);
 t_matrix		mat_new_scale(double x, double y, double z);
 t_matrix		mat_new_scale_center(double x, double y, double z, t_xyz p);
 t_matrix		mat_new_translation(double x, double y, double z);
-t_matrix		mat_persp_fov(double ar, double nz, double fz, double vfov);
+
+t_matrix		mat_persp_fov(double ar, double nz, double fz, t_deg vfov);
+t_matrix		mat_persp_fov2(t_deg fov, double near, double far);
 t_matrix		mat_persp_ortho(double w, double h, double nz, double fz);
+t_matrix		mat_persp_ortho2(t_xy v, t_xy h, t_xy d);
 t_matrix		mat_persp_wh(double w, double h, double nz, double fz);
 
 /*
@@ -89,8 +92,8 @@ t_matrix		mat_persp_wh(double w, double h, double nz, double fz);
 t_xyz			mtov(t_matrix mat);
 t_matrix		vtom(t_xyz euler);
 t_xyzw			vtoq(t_xyz euler);
-t_xyz			qtov(t_xyzw q);
-t_matrix		qtom(t_xyzw q);
+t_xyz			qtov(t_rotation q);
+t_matrix		qtom(t_rotation q);
 t_matrix		atom(t_xyzw r);
 
 /*
@@ -99,7 +102,11 @@ t_matrix		atom(t_xyzw r);
 
 t_matrix		mat_mul(t_matrix a, t_matrix b);
 t_matrix		mat_transpose(t_matrix *mat);
-t_matrix		mat_rotate(t_matrix m, t_xyzw q);
+t_matrix		mat_rotate(t_matrix m, t_rotation q);
+
+t_xy			vec2_rot(t_xy v, t_rad angle);
+
+t_xyz			vec3_rot(t_xyz v1, t_xyz v2);
 t_xyz			vec3_mulmat(t_xyz p, t_matrix mat);
 
 /*
@@ -107,15 +114,29 @@ t_xyz			vec3_mulmat(t_xyz p, t_matrix mat);
 */
 
 t_xy			vec2_add(t_xy a, t_xy b);
+t_xy			vec2_sub(t_xy a, t_xy b);
+t_xy			vec2_mul(t_xy v, double scalar);
+t_xy			vec2_div(t_xy v, double scalar);
+t_xy			vec2_norm(t_xy v);
+
+double			vec2_mag(t_xy v);
+double			vec2_dot(t_xy a, t_xy b);
+double			vec2_cross(t_xy a, t_xy b);
+
+double			vec2_rad(t_xy v);
+double			vec2_slope(t_xy p_a, t_xy p_b);
+t_xy			vec2_lerp(t_xy a, t_xy b, double t);
+
 t_xyz			vec3_add(t_xyz a, t_xyz b);
 t_xyz			vec3_sub(t_xyz a, t_xyz b);
 t_xyz			vec3_mul(t_xyz v, double scalar);
 t_xyz			vec3_div(t_xyz v, double scalar);
 t_xyz			vec3_norm(t_xyz v);
-t_xyz			vec3_cross(t_xyz a, t_xyz b);
-t_xyz			vec3_rot(t_xyz v1, t_xyz v2);
-double			vec3_dot(t_xyz a, t_xyz b);
+
 double			vec3_mag(t_xyz v);
+double			vec3_dot(t_xyz a, t_xyz b);
+t_xyz			vec3_cross(t_xyz a, t_xyz b);
+
 double			vec3_dist(t_xyz a, t_xyz b);
 
 t_rotation		rot_norm(t_rotation q);

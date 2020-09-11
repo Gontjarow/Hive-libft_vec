@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 21:44:45 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 07:55:04 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 10:31:30 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Rotates a matrix by a given quaternion.
 */
 
-t_matrix	mat_rotate(t_matrix m, t_xyzw q)
+t_matrix	mat_rotate(t_matrix m, t_rotation q)
 {
 	double c[9];
 

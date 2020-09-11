@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 08:51:24 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 10:07:14 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** vfov = vertical field of view (degrees)
 */
 
-t_matrix	mat_persp_fov(double ar, double nz, double fz, double vfov)
+t_matrix	mat_persp_fov(double ar, double nz, double fz, t_deg vfov)
 {
 	double hfov;
 	double clip;
@@ -46,7 +46,7 @@ t_matrix	mat_persp_fov(double ar, double nz, double fz, double vfov)
 ** near & far = clipping planes
 */
 
-t_matrix	mat_perps_fov2(double fov, double near, double far)
+t_matrix	mat_persp_fov2(t_deg fov, double near, double far)
 {
 	double scale;
 	double dist;

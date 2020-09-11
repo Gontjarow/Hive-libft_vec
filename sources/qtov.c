@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   qtov.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 02:22:43 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 19:12:23 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 10:34:42 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,28 @@
 **  - Euclideanspace.com
 */
 
-t_xyz	qtov(t_xyzw q)
+t_xyz	qtov(t_rotation q)
 {
-	t_xyzw	norm;
-	double	unit;
+	t_xyzw	sq;
+	double	length;
 	double	test;
 	t_xy	c;
 
-	norm = (t_xyzw){(q.x * q.x), (q.y * q.y), (q.z * q.z), (q.w * q.w)};
-	unit = norm.x + norm.y + norm.z + norm.w;
+	sq = (t_xyzw){(q.x * q.x), (q.y * q.y), (q.z * q.z), (q.w * q.w)};
+	length = sq.x + sq.y + sq.z + sq.w;
 	test = q.x * q.y + q.z * q.w;
 	c = (t_xy){2 * q.x, 2 * q.y};
-	if (test > unit * 0.499)
+	if (test > length * 0.499)
 	{
 		return ((t_xyz){0, 2 * atan2(q.x, q.w), PI_BY_TWO});
 	}
-	else if (test < unit * -0.499)
+	else if (test < length * -0.499)
 	{
 		return ((t_xyz){0, -2 * atan2(q.x, q.w), -PI_BY_TWO});
 	}
 	return ((t_xyz){
-		atan2(c.x * q.w - c.y * q.z, -norm.x + norm.y - norm.z + norm.w),
-		atan2(c.y * q.w - c.x * q.z, norm.x - norm.y - norm.z + norm.w),
-		asin(2 * test / unit)
+		atan2(c.x * q.w - c.y * q.z, -sq.x + sq.y - sq.z + sq.w),
+		atan2(c.y * q.w - c.x * q.z, sq.x - sq.y - sq.z + sq.w),
+		asin(2 * test / length)
 	});
 }

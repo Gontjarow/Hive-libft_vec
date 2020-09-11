@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 19:05:04 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 08:36:11 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 10:03:16 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 ** Note: This might be because of a difference in left/right-handedness. (?)
 */
 
-t_matrix	mat_new_roty(float radians)
+t_matrix	mat_new_roty(t_rad angle)
 {
 	double c;
 	double s;
 
-	c = cos(radians);
-	s = sin(radians);
+	c = cos(angle);
+	s = sin(angle);
 	return ((t_matrix){.m = {
 		{c, 0, -s, 0},
 		{0, 1, 0, 0},
