@@ -13,7 +13,7 @@ SOURCES = \
 	mat_persp_ortho.c \
 	mat_persp_wh.c \
 	mat_transpose.c \
-	mat_transform.c \
+	mat_rotate.c \
 	mtov.c \
 	qtom.c \
 	qtov.c \

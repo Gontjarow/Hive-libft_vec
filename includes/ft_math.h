@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 03:10:13 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 07:55:51 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_matrix		atom(t_xyzw r);
 
 t_matrix		mat_mul(t_matrix a, t_matrix b);
 t_matrix		mat_transpose(t_matrix *mat);
-t_matrix		mat_transform(t_matrix m, t_xyzw q);
+t_matrix		mat_rotate(t_matrix m, t_xyzw q);
 t_xyz			vec3_mulmat(t_xyz p, t_matrix mat);
 
 /*
