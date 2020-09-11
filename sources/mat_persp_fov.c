@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 08:02:05 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 08:51:24 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ t_matrix	mat_persp_fov(double ar, double nz, double fz, double vfov)
 	hfov = ar * vfov;
 	clip = fz / (nz - fz);
 	return ((t_matrix){.m = {
-		{hfov,    0,           0,      0},
-		{0,    vfov,           0,      0},
-		{0,       0,        clip,     -1},
-		{0,       0, (nz * clip),      0},
+		{hfov, 0, 0, 0},
+		{0, vfov, 0, 0},
+		{0, 0, clip, -1},
+		{0, 0, (nz * clip), 0},
 	}});
 }
 
@@ -55,9 +55,9 @@ t_matrix	mat_perps_fov2(double fov, double near, double far)
 	scale = 1 / tan(fov);
 	dist = far - near;
 	return ((t_matrix){.m = {
-		{scale,     0,                  0,  0},
-		{0,     scale,                  0,  0},
-		{0,         0,        -far / dist, -1},
-		{0,         0, -far * near / dist,  0}
+		{scale, 0, 0, 0},
+		{0, scale, 0, 0},
+		{0, 0, -far / dist, -1},
+		{0, 0, -far * near / dist, 0}
 	}});
 }

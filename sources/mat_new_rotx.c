@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 05:03:34 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 08:36:05 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_matrix	mat_new_rotx(float radians)
 	c = cos(radians);
 	s = sin(radians);
 	return ((t_matrix){.m = {
-		{1,  0, 0, 0},
-		{0,  c, s, 0},
+		{1, 0, 0, 0},
+		{0, c, s, 0},
 		{0, -s, c, 0},
-		{0,  0, 0, 1}
+		{0, 0, 0, 1}
 	}});
 }

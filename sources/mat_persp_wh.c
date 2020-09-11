@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 05:10:18 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 08:52:04 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_matrix	mat_persp_wh(double w, double h, double nz, double fz)
 	near2 = nz * 2;
 	clip = fz / (nz - fz);
 	return ((t_matrix){.m = {
-		{near2 / w,         0,         0,  0},
-		{0,         near2 / h,         0,  0},
-		{0,                 0,      clip, -1},
-		{0,                 0, nz * clip,  0}
+		{near2 / w, 0, 0, 0},
+		{0, near2 / h, 0, 0},
+		{0, 0, clip, -1},
+		{0, 0, nz * clip, 0}
 	}});
 }
