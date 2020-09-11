@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   mat_new_rotz.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 19:05:22 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 03:25:35 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
+
+/*
+** https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions
+** *
+** Todo: Double-check that signs for sine are correct.
+** Note: These matrices might be diagonally flipped. (?)
+** Note: This might be because of a difference in left/right-handedness. (?)
+*/
 
 t_matrix	mat_new_rotz(float radians)
 {
@@ -20,9 +28,9 @@ t_matrix	mat_new_rotz(float radians)
 	c = cos(radians);
 	s = sin(radians);
 	return ((t_matrix){
-		.m[0][0] = c, .m[0][1] = s, .m[0][2] = 0, .m[0][3] = 0,
-		.m[1][0] = -s, .m[1][1] = c, .m[1][2] = 0, .m[1][3] = 0,
-		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = 1, .m[2][3] = 0,
-		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = 0, .m[3][3] = 1
+		{ c, s, 0, 0},
+		{-s, c, 0, 0},
+		{ 0, 0, 1, 0},
+		{ 0, 0, 0, 1}
 	});
 }

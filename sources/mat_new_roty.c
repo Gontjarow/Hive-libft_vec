@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mat_new_rotY.c                                     :+:      :+:    :+:   */
+/*   mat_new_roty.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 19:05:04 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 19:07:09 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 03:26:20 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
+
+/*
+** https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions
+** *
+** Todo: Double-check that signs for sine are correct.
+** Note: These matrices might be diagonally flipped. (?)
+** Note: This might be because of a difference in left/right-handedness. (?)
+*/
 
 t_matrix	mat_new_roty(float radians)
 {
@@ -20,9 +28,9 @@ t_matrix	mat_new_roty(float radians)
 	c = cos(radians);
 	s = sin(radians);
 	return ((t_matrix){
-		.m[0][0] = c, .m[0][1] = 0, .m[0][2] = -s, .m[0][3] = 0,
-		.m[1][0] = 0, .m[1][1] = 1, .m[1][2] = 0, .m[1][3] = 0,
-		.m[2][0] = s, .m[2][1] = 0, .m[2][2] = c, .m[2][3] = 0,
-		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = 0, .m[3][3] = 1
+		{c, 0, -s, 0},
+		{0, 1,  0, 0},
+		{s, 0,  c, 0},
+		{0, 0,  0, 1}
 	});
 }
