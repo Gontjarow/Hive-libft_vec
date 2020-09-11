@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 03:42:44 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 05:02:55 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_matrix	mat_new_axang(t_xyz ax, double ang)
 
 	s = sin(ang);
 	c = cos(ang);
-	return ((t_matrix){
+	return ((t_matrix){.m = {
 		{
 			(ax.x * ax.x) + c * (1 - (ax.x * ax.x)),
 			(ax.x * ax.y) - c * (ax.x * ax.y) + s * ax.z,
@@ -41,5 +41,5 @@ t_matrix	mat_new_axang(t_xyz ax, double ang)
 			(ax.z * ax.z) + c * (1 - (ax.z * ax.z))
 		},
 		{0, 0, 0, 1}
-	});
+	}});
 }

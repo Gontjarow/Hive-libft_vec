@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 03:05:49 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 03:11:49 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 05:03:22 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ t_matrix	mat_new_rot2d(float radians)
 
 	c = cos(radians);
 	s = sin(radians);
-	return ((t_matrix){
+	return ((t_matrix){.m = {
 		{c, -s, 0, 0},
 		{s,  c, 0, 0},
 		{0,  0, 1, 0},
 		{0,  0, 0, 1}
-	});
+	}});
 }
