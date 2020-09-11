@@ -19,6 +19,16 @@ SOURCES = \
 	qtov.c \
 	quat_norm.c \
 	vec2_add.c \
+	vec2_cross.c \
+	vec2_dot.c \
+	vec2_lerp.c \
+	vec2_mag.c \
+	vec2_mul.c \
+	vec2_norm.c \
+	vec2_rad.c \
+	vec2_rot.c \
+	vec2_slope.c \
+	vec2_sub.c \
 	vec3_add.c \
 	vec3_cross.c \
 	vec3_dist.c \
