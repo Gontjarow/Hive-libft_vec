@@ -55,6 +55,11 @@ typedef struct	s_xyzw
 	double w;
 }				t_xyzw;
 
+typedef t_xyzw	t_rotation;
+typedef t_xyz	t_euler;
+typedef double	t_deg;
+typedef double	t_rad;
+
 /*
 ** Constructors?
 ** Maybe some of these should be #defines instead.
