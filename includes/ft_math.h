@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/09 19:38:06 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 03:10:13 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_matrix		mat_new_axang(t_xyz ax, double ang);
 t_matrix		mat_new_rotx(float radians);
 t_matrix		mat_new_roty(float radians);
 t_matrix		mat_new_rotz(float radians);
+t_matrix		mat_new_rot2d(float radians);
 t_matrix		mat_new_scale(double x, double y, double z);
 t_matrix		mat_new_scale_center(double x, double y, double z, t_xyz p);
 t_matrix		mat_new_translation(double x, double y, double z);
