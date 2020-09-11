@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat_persp_fov.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 19:09:25 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 04:14:26 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,34 @@ t_matrix	mat_persp_fov(double ar, double nz, double fz, double vfov)
 	hfov = ar * vfov;
 	clip = fz / (nz - fz);
 	return ((t_matrix){
-		.m[0][0] = hfov, .m[0][1] = 0, .m[0][2] = 0, .m[0][3] = 0,
-		.m[1][0] = 0, .m[1][1] = vfov, .m[1][2] = 0, .m[1][3] = 0,
-		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = clip, .m[2][3] = -1,
-		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = nz * clip, .m[3][3] = 0
+		{hfov,    0,           0,      0},
+		{0,    vfov,           0,      0},
+		{0,       0,        clip,     -1},
+		{0,       0, (nz * clip),      0},
+	});
+}
+
+/*
+** https://www.scratchapixel.com/lessons/3d-basic-rendering/
+** perspective-and-orthographic-projection-matrix/
+** building-basic-perspective-projection-matrix
+** *
+** fov = degrees (horizontal)
+** near & far = clipping planes
+*/
+
+t_matrix	mat_perps_fov2(double fov, double near, double far)
+{
+	double scale;
+	double dist;
+
+	fov = fov * 0.5 * DEG_TO_RAD;
+	scale = 1 / tan(fov);
+	dist = far - near;
+	return ((t_matrix){
+		{scale,     0,                  0,  0},
+		{0,     scale,                  0,  0},
+		{0,         0,        -far / dist, -1},
+		{0,         0, -far * near / dist,  0}
 	});
 }

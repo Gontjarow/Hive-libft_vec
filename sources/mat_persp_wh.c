@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat_persp_wh.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 19:11:17 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 05:10:18 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ t_matrix	mat_persp_wh(double w, double h, double nz, double fz)
 		return (mat_identity());
 	near2 = nz * 2;
 	clip = fz / (nz - fz);
-	return ((t_matrix){
-		.m[0][0] = near2 / w, .m[0][1] = 0, .m[0][2] = 0, .m[0][3] = 0,
-		.m[1][0] = 0, .m[1][1] = near2 / h, .m[1][2] = 0, .m[1][3] = 0,
-		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = clip, .m[2][3] = -1,
-		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = nz * clip, .m[3][3] = 0
-	});
+	return ((t_matrix){.m = {
+		{near2 / w,         0,         0,  0},
+		{0,         near2 / h,         0,  0},
+		{0,                 0,      clip, -1},
+		{0,                 0, nz * clip,  0}
+	}});
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat_persp_ortho.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 19:10:43 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/11 04:54:53 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,43 @@ t_matrix	mat_persp_ortho(double w, double h, double nz, double fz)
 		return (mat_identity());
 	clip = nz - fz;
 	return ((t_matrix){
-		.m[0][0] = 2 / w, .m[0][1] = 0, .m[0][2] = 0, .m[0][3] = 0,
-		.m[1][0] = 0, .m[1][1] = 2 / h, .m[1][2] = 0, .m[1][3] = 0,
-		.m[2][0] = 0, .m[2][1] = 0, .m[2][2] = 1 / clip, .m[2][3] = 0,
-		.m[3][0] = 0, .m[3][1] = 0, .m[3][2] = nz / clip, .m[3][3] = 1
+		{(2 / w),       0,           0, 0},
+		{0,       (2 / h),           0, 0},
+		{0,             0,  (1 / clip), 0},
+		{0,             0, (nz / clip), 1}
+	});
+}
+
+/*
+** https://www.scratchapixel.com/lessons/3d-basic-rendering/
+** perspective-and-orthographic-projection-matrix/
+** orthographic-projection-matrix
+** *
+** Remap scene bounding box into canonical view volume.
+** (Unit cube with radius 1. Min pos -1,-1,-1. Max pos 1,1,1.)
+** *
+**  v(ertical), |  h(eight), | d(epth)
+**    bot,top   | left,right | near,far
+*/
+
+t_matrix mat_persp_ortho2(t_xy v, t_xy h, t_xy d)
+{
+	double vertical;
+	double height;
+	double depth;
+
+	height = h.y - h.x;
+	vertical = v.y - v.x;
+	depth = d.y - d.x;
+	return ((t_matrix){
+		{2 / height,            0,          0, 0},
+		{0,          2 / vertical,          0, 0},
+		{0,                     0, -2 / depth, 0},
+		{
+			-(h.y + h.x) / height,
+			-(v.x + v.y) / vertical,
+			-(d.y + d.x) / depth,
+			1
+		}
 	});
 }
