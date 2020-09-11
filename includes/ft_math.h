@@ -117,7 +117,9 @@ t_xyz			vec3_rot(t_xyz v1, t_xyz v2);
 double			vec3_dot(t_xyz a, t_xyz b);
 double			vec3_mag(t_xyz v);
 double			vec3_dist(t_xyz a, t_xyz b);
-t_xyzw			quat_norm(t_xyzw q);
-t_xyzw			vec4_between(t_xyz a, t_xyz b);
+
+t_rotation		rot_norm(t_rotation q);
+double			rot_mag(t_rotation q);
+t_rotation		rot_between(t_xyz a, t_xyz b);
 
 #endif

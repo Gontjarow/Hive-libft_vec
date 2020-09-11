@@ -17,7 +17,6 @@ SOURCES = \
 	mtov.c \
 	qtom.c \
 	qtov.c \
-	quat_norm.c \
 	vec2_add.c \
 	vec2_cross.c \
 	vec2_dot.c \
@@ -40,7 +39,9 @@ SOURCES = \
 	vec3_norm.c \
 	vec3_rot.c \
 	vec3_sub.c \
-	vec4_between.c \
+	rot_norm.c \
+	rot_mag.c \
+	rot_between.c \
 	vtom.c \
 	vtoq.c
 

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quat_norm.c                                        :+:      :+:    :+:   */
+/*   rot_mag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 00:37:38 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/07 01:27:42 by ngontjar         ###   ########.fr       */
+/*   Created: 2020/09/11 10:27:26 by ngontjar          #+#    #+#             */
+/*   Updated: 2020/09/11 10:28:50 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-t_xyzw	quat_norm(t_xyzw q)
-{
-	double normalize;
+/*
+** Magnitude, or length
+*/
 
-	normalize = 1 / sqrt((q.x * q.x) + (q.y * q.y) + (q.z * q.z) + (q.w * q.w));
-	return ((t_xyzw){
-		q.x *= normalize,
-		q.y *= normalize,
-		q.z *= normalize,
-		q.w *= normalize
-	});
+double	rot_mag(t_rotation q)
+{
+	return (sqrt((q.x * q.x) + (q.y * q.y) + (q.z * q.z) + (q.w * q.w)));
 }
