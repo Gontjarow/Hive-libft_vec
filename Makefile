@@ -57,7 +57,14 @@ INC = -I $(INCDIR) -lm
 MSG = \033[1;36m
 END = \033[0m
 
-.PHONY: all, clean, fclean, re, test, file
+# Temporary C++ stuff
+CPP_SOURCES = test.cpp ft_vector.cpp
+CPP_SRCDIR = cpp/
+CPP_SRC = $(addprefix $(CPP_SRCDIR),$(CPP_SOURCES))
+CPP_OBJ = $(SRC:.cpp=.o)
+CPP_INC = -I $(CPP_SRCDIR) -lm
+
+.PHONY: all, clean, fclean, re, test, file, cpp
 
 all: $(NAME)
 
@@ -84,3 +91,7 @@ test:
 	gcc $(file) -l vector-math -L . $(INC)
 	@echo "$(MSG)Running...$(END)"
 	./a.out
+
+# Just compile and run.
+cpp:
+	g++ $(CPP_SRC) $(CPP_INC) -o exe && ./exe
