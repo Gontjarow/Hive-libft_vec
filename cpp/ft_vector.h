@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ft_matrix.h"
+
 #include <cmath>
 #include <cstdio>	// sprintf
 #include <iostream>	// cout
@@ -16,6 +18,8 @@
 
 namespace ft
 {
+	struct Matrix;
+
 	struct Vector
 	{
 		double x;
@@ -60,6 +64,7 @@ namespace ft
 		Vector operator - (const double &r) const;
 		Vector operator * (const double &r) const;
 		Vector operator / (const double &r) const;
+		Vector operator * (const Matrix &r) const;
 
 		Vector& operator  = (const Vector &r);
 		Vector& operator += (const Vector &r);
