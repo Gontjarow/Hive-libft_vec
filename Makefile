@@ -58,7 +58,7 @@ MSG = \033[1;36m
 END = \033[0m
 
 # Temporary C++ stuff
-CPP_SOURCES = test.cpp ft_vector.cpp
+CPP_SOURCES = test.cpp ft_vector.cpp ft_matrix.cpp
 CPP_SRCDIR = cpp/
 CPP_SRC = $(addprefix $(CPP_SRCDIR),$(CPP_SOURCES))
 CPP_OBJ = $(SRC:.cpp=.o)
