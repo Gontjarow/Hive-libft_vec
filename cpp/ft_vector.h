@@ -73,6 +73,7 @@ namespace ft
 		Vector& operator -= (const double &r);
 		Vector& operator *= (const double &r);
 		Vector& operator /= (const double &r);
+		Vector& operator *= (const Matrix &r);
 
 		bool operator == (const Vector &r) const;
 		bool operator != (const Vector &r) const;

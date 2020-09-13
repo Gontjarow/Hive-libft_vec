@@ -146,6 +146,7 @@ namespace ft
 
 	Vector Vector::operator * (const Matrix &r) const
 	{
+		// Fully applies RHS matrix to LHS vector.
 		return Vector(
 			this->x * r.m[0][0] +
 			this->y * r.m[1][0] +
@@ -216,6 +217,23 @@ namespace ft
 		y /= r;
 		z /= r;
 		return *this;
+	}
+
+	Vector& Vector::operator *= (const Matrix &r)
+	{
+		// Fully applies RHS matrix to LHS vector.
+		this->x * r.m[0][0] +
+		this->y * r.m[1][0] +
+		this->z * r.m[2][0] + r.m[3][0];
+
+		this->x * r.m[0][1] +
+		this->y * r.m[1][1] +
+		this->z * r.m[2][1] + r.m[3][1];
+
+		this->x * r.m[0][2] +
+		this->y * r.m[1][2] +
+		this->z * r.m[2][2] + r.m[3][2];
+		return (*this);
 	}
 
 	// http://realtimecollisiondetection.net/blog/?p=89
