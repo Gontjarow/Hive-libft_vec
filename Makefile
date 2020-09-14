@@ -39,6 +39,7 @@ SOURCES = \
 	vec3_norm.c \
 	vec3_rot.c \
 	vec3_sub.c \
+	vec4_mulmat.c \
 	rot_norm.c \
 	rot_mag.c \
 	rot_between.c \
@@ -57,12 +58,19 @@ INC = -I $(INCDIR) -lm
 MSG = \033[1;36m
 END = \033[0m
 
-# Temporary C++ stuff
+# C++ stuff
 CPP_SOURCES = test.cpp ft_vector.cpp ft_matrix.cpp
 CPP_SRCDIR = cpp/
 CPP_SRC = $(addprefix $(CPP_SRCDIR),$(CPP_SOURCES))
 CPP_OBJ = $(SRC:.cpp=.o)
 CPP_INC = -I $(CPP_SRCDIR) -lm
+
+# C SDL2 stuff
+SDL_SOURCES = demo.c
+SDL_SRCDIR = demo/
+SDL_SRC = $(addprefix $(SDL_SRCDIR),$(SDL_SOURCES))
+SDL_OBJ = $(SRC:.c=.o)
+SDL_INC = -I $(INCDIR) -L. -lvector-math -lm -lSDL2 -lSDL2_image
 
 .PHONY: all, clean, fclean, re, test, file, cpp
 
@@ -95,3 +103,7 @@ test:
 # Just compile and run.
 cpp:
 	g++ $(CPP_SRC) $(CPP_INC) -o exe && ./exe
+
+# SDL demo for another project
+sdl:
+	gcc -o demo.exe $(SDL_SRC) $(SDL_INC) && ./demo.exe
