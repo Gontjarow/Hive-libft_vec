@@ -6,7 +6,7 @@
 /*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:34:32 by ngontjar          #+#    #+#             */
-/*   Updated: 2019/12/13 03:08:10 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/14 21:56:11 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** Rotate point (vector p) by a given matrix.
 ** TODO: Might actually need the 4th component.
+** NOTE: DEPRECATED - USE vec4_mulmat INSTEAD
 */
 
 t_xyz	vec3_mulmat(t_xyz p, t_matrix mat)

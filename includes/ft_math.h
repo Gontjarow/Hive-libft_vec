@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 20:55:19 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/14 22:40:34 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,7 @@ double			vec3_dist(t_xyz a, t_xyz b);
 t_rotation		rot_norm(t_rotation q);
 double			rot_mag(t_rotation q);
 t_rotation		rot_between(t_xyz a, t_xyz b);
+
+t_xyzw			vec4_mulmat(t_xyzw p, t_matrix mat);
 
 #endif
