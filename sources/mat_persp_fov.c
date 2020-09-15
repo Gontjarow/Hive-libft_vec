@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat_persp_fov.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:24:57 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/11 10:07:14 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/15 01:19:27 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_matrix	mat_persp_fov(double ar, double nz, double fz, t_deg vfov)
 	double hfov;
 	double clip;
 
-	if (nz <= 0 || fz <= 0 || nz >= fz || (vfov <= 0 || vfov >= PI))
+	if (nz <= 0 || fz <= 0 || nz >= fz || (vfov <= 0 || vfov >= 180))
 		return (mat_identity());
 	vfov = 1 / tan(vfov * 0.5 * DEG_TO_RAD);
 	hfov = ar * vfov;

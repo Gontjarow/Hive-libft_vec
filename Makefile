@@ -19,6 +19,7 @@ SOURCES = \
 	qtov.c \
 	vec2_add.c \
 	vec2_cross.c \
+	vec2_div.c \
 	vec2_dot.c \
 	vec2_lerp.c \
 	vec2_mag.c \
@@ -106,4 +107,4 @@ cpp:
 
 # SDL demo for another project
 sdl:
-	gcc -o demo.exe $(SDL_SRC) $(SDL_INC) && ./demo.exe
+	gcc -o demo.exe -g $(SDL_SRC) $(SDL_INC) && ./demo.exe
