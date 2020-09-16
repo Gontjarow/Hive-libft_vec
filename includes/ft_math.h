@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngontjar <ngontjar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ngontjar <niko.gontjarow@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:22:21 by ngontjar          #+#    #+#             */
-/*   Updated: 2020/09/14 22:40:34 by ngontjar         ###   ########.fr       */
+/*   Updated: 2020/09/16 14:46:26 by ngontjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,9 @@ double			vec2_rad(t_xy v);
 double			vec2_slope(t_xy p_a, t_xy p_b);
 t_xy			vec2_lerp(t_xy a, t_xy b, double t);
 
+t_xyz			vec23(t_xy v);
+t_xyzw			vec24(t_xy v);
+
 t_xyz			vec3_add(t_xyz a, t_xyz b);
 t_xyz			vec3_sub(t_xyz a, t_xyz b);
 t_xyz			vec3_mul(t_xyz v, double scalar);
@@ -139,10 +142,16 @@ t_xyz			vec3_cross(t_xyz a, t_xyz b);
 
 double			vec3_dist(t_xyz a, t_xyz b);
 
+t_xy			vec32(t_xyz v);
+t_xyzw			vec34(t_xyz v);
+
 t_rotation		rot_norm(t_rotation q);
 double			rot_mag(t_rotation q);
 t_rotation		rot_between(t_xyz a, t_xyz b);
 
 t_xyzw			vec4_mulmat(t_xyzw p, t_matrix mat);
+
+t_xy			vec42(t_xyzw v);
+t_xyz			vec43(t_xyzw v);
 
 #endif

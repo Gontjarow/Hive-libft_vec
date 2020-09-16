@@ -29,6 +29,7 @@ SOURCES = \
 	vec2_rot.c \
 	vec2_slope.c \
 	vec2_sub.c \
+	vec2_convert.c \
 	vec3_add.c \
 	vec3_cross.c \
 	vec3_dist.c \
@@ -40,7 +41,9 @@ SOURCES = \
 	vec3_norm.c \
 	vec3_rot.c \
 	vec3_sub.c \
+	vec3_convert.c \
 	vec4_mulmat.c \
+	vec4_convert.c \
 	rot_norm.c \
 	rot_mag.c \
 	rot_between.c \
